@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indigo</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="logo-animation">
+            <img src="logo.png" alt="Logo" class="animated-logo">
+            <div class="loading-text">Loading your garden assistant...</div>
+        </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div id="settings-modal" class="settings-modal">
+        <div class="settings-modal-content">
+            <div class="settings-header">
+                <h2>⚙️ Settings</h2>
+                <button class="close-modal" id="close-settings">×</button>
+            </div>
+
+            <div class="settings-body">
+                <p class="settings-description">Configure your AI provider API keys</p>
+
+                <div class="setting-group">
+                    <label>OpenAI API Key</label>
+                    <input type="password" id="openai-key" placeholder="sk-...">
+                    <p class="setting-hint">For GPT-4 and GPT-4V image analysis</p>
+                </div>
+
+                <div class="setting-group">
+                    <label>Anthropic API Key</label>
+                    <input type="password" id="anthropic-key" placeholder="sk-ant-...">
+                    <p class="setting-hint">For Claude 3.5 Sonnet</p>
+                </div>
+
+                <div class="setting-group">
+                    <label>Google Gemini API Key</label>
+                    <input type="password" id="gemini-key" placeholder="AIza...">
+                    <p class="setting-hint">For Gemini 2.0 Flash</p>
+                </div>
+
+                <div class="setting-group">
+                    <label>Groq API Key</label>
+                    <input type="password" id="groq-key" placeholder="gsk_...">
+                    <p class="setting-hint">For Mixtral (text-only)</p>
+                </div>
+
+                <button id="save-settings" class="save-btn">Save API Keys</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="app-container" id="app-container">
+        <!-- Left Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <img src="logo.png" alt="Logo" class="sidebar-logo">
+                <h2>Indigo</h2>
+            </div>
+
+            <button id="new-chat-btn" class="new-chat-btn">+ New Chat</button>
+
+            <div class="history-section">
+                <h3>HISTORY</h3>
+                <div id="history-list" class="history-list">
+                    <!-- History items will be added here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <header class="top-bar">
+                <h1>🌿 Indigo</h1>
+                <div class="controls">
+                    <select id="garden-select" class="select-control">
+                        <option value="" disabled selected>Select Garden...</option>
+                    </select>
+                    <button id="settings-btn" class="settings-btn">⚙️</button>
+                </div>
+            </header>
+
+            <div class="content-area">
+                <div class="tabs">
+                    <button class="tab active">💬 Chat</button>
+                    <button class="tab">📷 Image Analysis</button>
+                    <button class="tab">📖 Guide</button>
+                </div>
+
+                <div id="chat-window" class="chat-window">
+                    <div class="message system">
+                        👋 Welcome! Configure your API keys using the ⚙️ button, then select a garden to begin.
+                    </div>
+                </div>
+
+                <form id="chat-form" class="chat-form">
+                    <input type="file" id="image-input" accept="image/*" style="display: none;">
+                    <button type="button" id="upload-btn" class="icon-btn" title="Upload plant image">📷</button>
+                    <input type="text" id="message-input" class="message-input" placeholder="Ask about your garden..."
+                        autocomplete="off">
+                    <button type="submit" class="send-btn">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

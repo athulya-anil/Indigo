@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indigo</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <img src="logo.png" alt="Indigo Logo">
+                <h1>Indigo</h1>
+            </div>
+            <div class="controls">
+                <button id="settings-btn" class="icon-btn" title="Settings">⚙️</button>
+                <select id="garden-select">
+                    <!-- Gardens loaded via JS -->
+                    <option value="" disabled selected>Select Garden...</option>
+                </select>
+                <select id="provider-select">
+                    <option value="openai">OpenAI (GPT-4)</option>
+                    <option value="anthropic">Anthropic (Claude 3)</option>
+                    <option value="gemini">Gemini (2.0 Flash)</option>
+                    <option value="groq">Groq (Mixtral)</option>
+                </select>
+            </div>
+        </header>
+
+        <div id="chat-window">
+            <div class="message system">
+                Select a garden to begin interacting with Indigo.
+            </div>
+        </div>
+
+        <form id="chat-form">
+            <input type="file" id="image-input" accept="image/*" style="display: none;">
+            <button type="button" id="upload-btn" title="Upload plant image">📷</button>
+            <input type="text" id="message-input" placeholder="Ask about your garden..." autocomplete="off">
+            <button type="submit">Send</button>
+        </form>
+    </div>
+
+    <!-- Settings Modal -->
+    <div id="settings-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Settings</h2>
+                <button class="close-btn" id="close-settings">×</button>
+            </div>
+
+            <div class="settings-section">
+                <div class="section-title">API Configuration</div>
+                <p class="section-description">Configure your AI provider API keys for personalized garden assistance
+                </p>
+
+                <div class="setting-card">
+                    <div class="setting-header">
+                        <div class="setting-info">
+                            <div class="setting-title">OpenAI API Key</div>
+                            <div class="setting-subtitle">Required for GPT-4 and GPT-4V image analysis</div>
+                        </div>
+                        <label class="toggle">
+                            <input type="checkbox" id="openai-enabled">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    <input type="password" id="openai-key" class="api-key-input" placeholder="sk-...">
+                </div>
+
+                <div class="setting-card">
+                    <div class="setting-header">
+                        <div class="setting-info">
+                            <div class="setting-title">Anthropic API Key</div>
+                            <div class="setting-subtitle">Required for Claude 3.5 Sonnet</div>
+                        </div>
+                        <label class="toggle">
+                            <input type="checkbox" id="anthropic-enabled">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    <input type="password" id="anthropic-key" class="api-key-input" placeholder="sk-ant-...">
+                </div>
+
+                <div class="setting-card">
+                    <div class="setting-header">
+                        <div class="setting-info">
+                            <div class="setting-title">Google Gemini API Key</div>
+                            <div class="setting-subtitle">Required for Gemini 2.0 Flash</div>
+                        </div>
+                        <label class="toggle">
+                            <input type="checkbox" id="gemini-enabled">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    <input type="password" id="gemini-key" class="api-key-input" placeholder="AIza...">
+                </div>
+
+                <div class="setting-card">
+                    <div class="setting-header">
+                        <div class="setting-info">
+                            <div class="setting-title">Groq API Key</div>
+                            <div class="setting-subtitle">Required for Mixtral (text-only)</div>
+                        </div>
+                        <label class="toggle">
+                            <input type="checkbox" id="groq-enabled">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    <input type="password" id="groq-key" class="api-key-input" placeholder="gsk_...">
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button id="save-settings" class="primary-btn">Save Settings</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

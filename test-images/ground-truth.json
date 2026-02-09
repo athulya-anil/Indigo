@@ -1,0 +1,16 @@
+{
+    "example-healthy-tomato.jpg": {
+        "condition": "healthy",
+        "plant": "tomato"
+    },
+    "example-diseased-basil.jpg": {
+        "condition": "diseased",
+        "plant": "basil",
+        "issue": "powdery mildew"
+    },
+    "example-pest-damage-rose.jpg": {
+        "condition": "pest damage",
+        "plant": "rose",
+        "issue": "aphids"
+    }
+}

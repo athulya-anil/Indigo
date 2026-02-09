@@ -1,0 +1,22 @@
+name: Backyard Veggie Patch
+anchor:
+  principles:
+    - Organic only, no synthetic pesticides.
+    - Focus on heirloom varieties.
+    - Companion planting (e.g., basil with tomatoes).
+  location: Austin, TX
+  zone: 8b
+  style: Raised beds, cottage style.
+log:
+  - date: 2023-03-15
+    entry: Planted Cherokee Purple tomato seedlings.
+    tags: [tomato, planting, heirloom]
+  - date: 2023-04-10
+    entry: Noticed some yellowing leaves on the lower tomato branches. Possible blight?
+    tags: [tomato, disease, diagnosis]
+review:
+  - period: Spring 2023
+    summary: successful start but struggled with early blight.
+    lessons_learned:
+      - Mulch earlier to prevent soil splash.
+      - Prune lower leaves for better airflow.
