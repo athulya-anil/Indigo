@@ -49,6 +49,3 @@ Indigo is a specialized AI agent for gardening, inspired by the stateless, modul
 3. Add Environment Variables in Vercel Dashboard.
 
 **Note on Persistence**: On Vercel, the filesystem is ephemeral. Garden logs added via chat will be processed for the current session but may reset on redeploy. For permanent storage, connect an external database or Blob store (future improvement).
-
-## Inspiration
-Architecture based on [PranavMishra17/SoulEngine](https://github.com/PranavMishra17/SoulEngine).
